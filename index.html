@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Controle de orçamentos</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- my custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="row cabecalho text-center">
+    <div class="col-10">
+      <h1 id="titulo"></h1>
+    </div>
+    <div class="col-2">
+      <div><i class="fas fa-user pr-2"></i>
+        <p class="label-usuario" id="user"></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="row"><br></div>
+  <div class="container">
+    <!-- Cabeçalho do navbar -->
+    <ul class="nav nav-tabs nav-justified md-tabs" id="myTabJust" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab-just" data-toggle="tab" href="#home-just" role="tab"
+          aria-controls="home-just" aria-selected="true"><i class="fas fa-home pr-2"></i>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab-just" data-toggle="tab" href="#profile-just" role="tab"
+          aria-controls="profile-just" aria-selected="false"><i class="fas fa-user pr-2"></i>Meu usuário</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab-just" data-toggle="tab" href="#contact-just" role="tab"
+          aria-controls="contact-just" aria-selected="false"><i class="fas fa-cog pr-2"></i>Configurações</a>
+      </li>
+    </ul>
+
+    <!-- Conteúdo das abas -->
+    <div class="tab-content card" id="myTabContentJust">
+      <div class="tab-pane fade show active padding-padrao" id="home-just" role="tabpanel"
+        aria-labelledby="home-tab-just">
+        <div class="row">
+          <div class="col-md-6 text-right">
+            <h2>Seus orçamentos</h2>
+          </div>
+          <div class="col-md-6 text-right">
+            <button onclick="novoOrcamento()" type="button" class="btn btn-outline-default waves-effect"><i
+                class="fas fa-plus pr-2"></i>Novo</button>
+          </div>
+        </div>
+        <div id="novo-orcamento" class="animated fadeIn">
+
+          <form class="needs-validation" novalidate>
+
+            <div class="md-form">
+              <input type="text" id="titulo-orcamento" class="form-control" required>
+              <label for="titulo-orcamento">Título do orçamento</label>
+              <div class="invalid-feedback">
+                Insira o título do orçamento.
+              </div>
+              <div class="valid-feedback">
+                Preenchido corretamente
+              </div>
+            </div>
+            <div class="md-form">
+              <input type="text" id="descricao-orcamento" class="form-control" required>
+              <label for="descricao-orcamento">Descrição do orçamento</label>
+              <div class="invalid-feedback">
+                Descreva o orçamento.
+              </div>
+              <div class="valid-feedback">
+                Preenchido corretamente
+              </div>
+            </div>
+
+            <button onclick="cancelarNovoOrcamento()" type="button"
+              class="btn btn-outline-danger waves-effect">Cancelar</button>
+            <button onclick="salvarNovoOrcamento()" type="submit"
+              class="btn btn-outline-success waves-effect">Salvar</button>
+
+          </form>
+        </div>
+        <div id="lista-orcamentos" class="row animated fadeIn" style="margin-top: 15px;">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title"><a>Festa do Mickey</a></h4>
+                <p class="card-text"><i class="far fa-clock pr-2"></i>12/12/2019</p>
+                <p class="card-text">Descrição pequena da festa que ocorrerá</p>
+                <a href="#" class="btn btn-primary"><i class="fas fa-eye pr-2"></i>Ver mais...</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title"><a>Festa da Barbie</a></h4>
+                <p class="card-text"><i class="far fa-clock pr-2"></i>15/04/2020</p>
+                <p class="card-text">Descrição pequena da festa que ocorrerá</p>
+                <a href="#" class="btn btn-primary"><i class="fas fa-eye pr-2"></i>Ver mais...</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title"><a>Festa do Carros</a></h4>
+                <p class="card-text"><i class="far fa-clock pr-2"></i>19/11/2019</p>
+                <p class="card-text">Descrição pequena da festa que ocorrerá</p>
+                <a href="#" class="btn btn-primary"><i class="fas fa-eye pr-2"></i>Ver mais...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile-just" role="tabpanel" aria-labelledby="profile-tab-just">
+        <!-- Colocar conteudo aqui -->
+      </div>
+      <div class="tab-pane fade" id="contact-just" role="tabpanel" aria-labelledby="contact-tab-just">
+        <!-- Colocar conteudo aqui -->
+      </div>
+    </div>
+  </div>
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Sweet alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- my custom js -->
+  <script type="text/javascript" src="js/inicial.js"></script>
+</body>
+
+</html>
